@@ -11,10 +11,10 @@
 int *bubbleSort01(int arr[],int len);
 int main(int argc, const char * argv[]) {
 
-    int array[5] = {3,4,0,9,2};
-    int *p = bubbleSort01(array, 5);
+    int array[7] = {150,111,1000,99,300,10,189};
+    int *p = bubbleSort01(array, 7);
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         printf("%d ",*(p+i));
     }
 
@@ -25,7 +25,7 @@ int *bubbleSort01(int arr[],int len){
 
     int temp;
     for (int i = 0; i < len; i++){
-        for (int j = i; j < len - i; j++) {
+        for (int j = 1; j < len - i; j++) {
             if (arr[j - 1] > arr[j]) {
 
                 temp = arr[j - 1];
