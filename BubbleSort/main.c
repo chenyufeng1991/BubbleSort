@@ -8,8 +8,32 @@
 
 #include <stdio.h>
 
+int *bubbleSort01(int arr[],int len);
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+
+    int array[5] = {3,4,0,9,2};
+    int *p = bubbleSort01(array, 5);
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d ",*(p+i));
+    }
+
     return 0;
+}
+
+int *bubbleSort01(int arr[],int len){
+
+    int temp;
+    for (int i = 0; i < len; i++){
+        for (int j = i; j < len - i; j++) {
+            if (arr[j - 1] > arr[j]) {
+
+                temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+
 }
