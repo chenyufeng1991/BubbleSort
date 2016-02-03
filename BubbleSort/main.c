@@ -18,10 +18,19 @@ int *bubbleSort02(int arr[],int len);
 int main(int argc, const char * argv[]) {
 
     int array[7] = {150,111,1000,99,300,10,189};
-    int *p = bubbleSort02(array, 7);
+    //    int *p = bubbleSort02(array, 7);
+    //
+    //    for (int i = 0; i < 7; i++) {
+    //        printf("%d ",*(p+i));
+    //    }
 
+    /**
+     *  可以使用传引用的方式，实现如下;
+     这里不需要返回值，直接打印即可；
+     */
+    bubbleSort01(array, 7);
     for (int i = 0; i < 7; i++) {
-        printf("%d ",*(p+i));
+        printf("%d ",array[i]);
     }
 
     return 0;
@@ -63,7 +72,7 @@ int *bubbleSort02(int arr[],int len){
         }
         len--;//最大的元素已经完成；
     }
-
+    
     return arr;
 }
 
