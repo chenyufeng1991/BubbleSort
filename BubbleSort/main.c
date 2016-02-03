@@ -17,6 +17,7 @@ int *bubbleSort01(int arr[],int len);
 int *bubbleSort02(int arr[],int len);
 void bubbleSort03(int arr[],int len);
 void bubbleSort04(int *arr,int len);
+void swap(int *a,int *b);
 
 int main(int argc, const char * argv[]) {
 
@@ -36,7 +37,7 @@ int main(int argc, const char * argv[]) {
      *  可以使用传引用的方式，实现如下;
      这里不需要返回值，直接打印即可,推荐使用这种方式，方便；
      */
-    bubbleSort04(array, 7);
+    bubbleSort01(array, 7);
     for (int i = 0; i < 7; i++) {
         printf("%d ",array[i]);
     }
@@ -52,9 +53,12 @@ int *bubbleSort01(int arr[],int len){
         for (int j = 1; j < len - i; j++) {
             if (arr[j - 1] > arr[j]) {
 
-                temp = arr[j - 1];
-                arr[j - 1] = arr[j];
-                arr[j] = temp;
+//                temp = arr[j - 1];
+//                arr[j - 1] = arr[j];
+//                arr[j] = temp;
+
+                //这里也可以使用swap交换函数；
+                swap(&arr[j - 1], &arr[j]);
             }
         }
     }
@@ -121,3 +125,23 @@ void bubbleSort04(int *arr,int len){
         len--;//最大的元素已经完成；
     }
 }
+
+
+void swap(int *a,int *b){
+
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+
+
+
+
+
+
+
+
+
+
