@@ -20,7 +20,6 @@ void swap(int *a,int *b);
 int main(int argc, const char * argv[]) {
 
     int array[7] = {150,111,1000,99,300,10,189};
-
     bubbleSort03(array, 7);
     for (int i = 0; i < 7; i++) {
         printf("%d ",array[i]);
@@ -54,7 +53,6 @@ void bubbleSort04(int *arr,int len){
         flag = false;
         for (int i = 1; i < len; i++) {
             if (arr[i - 1] > arr[i]) {
-
                 //如果某一趟没有没有交换元素，则表示排序完成；
                 temp = arr[i - 1];
                 arr[i - 1] = arr[i];
@@ -66,7 +64,6 @@ void bubbleSort04(int *arr,int len){
     }
 }
 
-
 void swap(int *a,int *b){
 
     int temp;
@@ -74,14 +71,3 @@ void swap(int *a,int *b){
     *a = *b;
     *b = temp;
 }
-
-
-
-
-
-
-
-
-
-
-
